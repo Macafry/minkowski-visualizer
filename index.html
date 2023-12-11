@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+    <title>Document</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Minkowski Home</a></li> 
+        <li><a href="setshapes.html">Shapes as Sets</a></li> 
+        <li><a href="visualizer.html">Interactive visualizer</a></li> 
+    </ul>
+</nav>
+<main>
+    <h1>Minkowski Operations</h1>
+    <h3>Minkowski Sum</h3>
+    <p>
+        The Minkowski Sum operation is defined on <a href="setshapes.html"> sets that represent shapes</a>. Let $S_A$ and $S_B$ be shapes in $\mathbb{R}^n$.
+        Then, the Minkowski Sum is the a set defined by the rule $\operatorname{Minkowski Sum}(S_A, S_B) =\{a + b \mid a \in S_A \wedge b \in S_B \}$.
+        <br>
+        <br>
+        Another way of defining the Minkowski Sum is as the codomain of the map $f\colon S_A \times S_B \to \mathbb{R}^n$ with the rule $f(a,b) = a + b$.
+        That is, the set of all points that can be expressed as a sum of an element of $S_A$ and an element of $S_B$.
+    </p>
+    <h3>Minkowski Difference</h3>
+    <p>
+        There are two ways to define Minkowski Difference: as the inverse operation to the Minkowski Sum or as a similar operator where we change adittion for subtraction. 
+        We'll use the latter definition. So, $\operatorname{Minkowski Difference}(S_A, S_B) =\{a + b \mid a \in S_A \wedge b \in S_B \}$. 
+        A nice result of the Minkowski difference is that $\vec{0} \in \operatorname{Minkowski Difference}(S_A, S_B)$ iff $S_A$ and $S_B$ intersect.
+        <br>
+        <br>
+        <em>Proof.</em> Assume $\vec{0} \in \operatorname{Minkowski Difference}(S_A, S_B)$, that is, $\exists a \in S_A  \wedge b \in S_B$ such that $a-b=\vec{0}$.
+        Then, $a=b$, so $a \in S_B$ as well. As $a \in S_A$ and $a \in S_B$, $a \in S_a \cap S_B$. 
+        As there is an element in the intersection, the intersection is not empty, so they do intersect. This proves sufficiency.
+        <br>
+        <br>
+        Now assume $S_A$ and $S_B$ don't intersect, that is, there's no element $a$ such that  $a \in S_A$ and $a \in S_B$. 
+        However, the only way to get $a-b=\vec{0}$ is when $a=b$. But, no element exists in both $S_A$ and $S_B$ for that to be possible.
+        Therefore, $\vec{0} \notin \operatorname{Minkowski Difference}(S_A, S_B)$. This proves necessity.
+        <br>
+        <br>
+        Therefore, $\vec{0} \in \operatorname{Minkowski Difference}(S_A, S_B)$ iff $S_A$ and $S_B$ intersect.$\blacksquare$
+    </p>
+    <h3>Applications</h3>
+    <p>
+        The most useful application can be found in videogames. 
+        In videogames developers need to check for the collision of hitboxes, that is, if two hitboxes intersect. 
+        When the bounding boxes are n-d cubes, the collision check is pretty simple. 
+        However, if the shapes are much more complicated but convex, 
+        then the Minkowski Difference allows for a pretty neath alogirithm to detect if two convex shapes intersect, 
+        called the GJK algorithm.
+        <a href="https://www.youtube.com/embed/ajv46BSqcK4">Click here to learn more about the GJK algorithm.</a>
+        <br>
+        <br>
+        We can also use Minkowski Sums to define some Visual Graphics operations mathematically. We can define a round corners operator by the rule
+        $\operatorname{Round Corners}(S_A,r) = \operatorname{Minkowski Difference}(\operatorname{Circ}_r, S_A)$. 
+        Where $\operatorname{Circ}_r$ is a circle with radius $r$ centered at the origin.
+        <br>
+        <br>
+        We can also define the elongate operator by performing the Minkowski Sum between a shape and a line segment of the desired elongation length and elongation direction.
+    </p>
+</main>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</body>
+</html>

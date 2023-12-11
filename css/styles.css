@@ -1,4 +1,55 @@
+/* CSS Reset */
+body, header, nav, main, footer, h1, div, img, ul, figure, figcaption, section, article, aside, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Style rules for nav area */
+nav {
+    padding: 1%;
+    margin-bottom: 1%;
+    background-color: black;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav li {
+    font-size: 1.5em;
+    font-family: 'Francois One', sans-serif;
+    display: inline-block;
+    border-right: 1px solid #fff;
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav li a {
+    padding: 0.1em 0.75em;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+main {
+  padding: 10px 10%;
+}
+
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-  }
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+img, figcaption {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

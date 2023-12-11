@@ -37,3 +37,22 @@ let Mdiff = new Minkowski(shapeA,shapeB,canvasdiff, "#aa8", "#dd0", (a,b) => (a-
 shapeA.diff = Mdiff;
 shapeB.diff = Mdiff;
 Mdiff.render();
+
+
+function circler(shape, radius, steps) {
+    let points = []
+    let dtheta = 2 * Math.PI / steps
+    for(let i = 0; i < steps; i++) {
+        let theta = i * dtheta;
+
+        let point = [radius * Math.cos(theta), radius * Math.sin(theta)];
+        console.log(point);
+        points.push(point);
+    }
+
+    console.log(points);
+
+    shape.points = points;
+    shape.render();
+
+}

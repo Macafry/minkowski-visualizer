@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+    <title>Document</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Minkowski Home</a></li> 
+        <li><a href="setshapes.html">Shapes as Sets</a></li> 
+        <li><a href="visualizer.html">Interactive visualizer</a></li> 
+    </ul>
+</nav>
+<main>
+    <h1>Shapes as sets</h1>
+    <h3>Basic Idea</h3>
+    <p>
+        We can think of a shape as a subset of the plane such that it follows some conditions. 
+        Take for instance a circle centered at the origin of radius $r$. 
+        We can define it as $\{x,y \in \mathbb{R}^2 \mid x^2 + y^2 \le r^2 \}$.
+        <figure>
+            <img src="images/centeredCircle.png" width=80%>
+            <figcaption>Circle of radius $\sqrt{5}$.</figcaption>
+        </figure>
+        <br>
+        Even if it's not centered at the origin, we can define it as 
+        $\{x,y \in \mathbb{R}^2 \mid (x-k)^2 + (y-h)^2 \le r^2 \}$, 
+        where $k$ and $h$ are the horizontal and vertical offsets respectively.
+        <figure>
+            <img src="images/shiftedCircle.png" width=80%>
+            <figcaption>Circle of radius $\sqrt{5}$ shifted 1 unit to the left and 2 units up.</figcaption>
+        </figure>
+    </p>
+    <h3>Generalizing the idea</h3>
+    <p>
+        In general, as long as we can express a shape as a bounded region, we can define a set for that shape. 
+        But this begs the question, how do we express polygons as sets? 
+        - Well let's remember that we can triangulate any polynomial into triangles. 
+        So, if we can express any triangle as a set, we should be able to express any polygon as a set as well.
+        We can define a basic triangle as $\{x,y \in \mathbb{R}^2 \mid 0 \le x \le y \le 1 \}$.
+        <figure>
+            <img src="images/setTriangle.png" width=80%>
+            <figcaption>Basic triangle as a Set.</figcaption>
+        </figure>
+        
+        Then we can apply affine transformations to get any kind of triangle. 
+        Once we do that for every triangle that triangulates the polygon, take their union to get the set for the original polygon.
+    </p>
+</main>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</body>
+</html>
