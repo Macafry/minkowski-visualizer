@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" >
+    <title>Document</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="index.html">Minkowski Home</a></li> 
+        <li><a href="setshapes.html">Shapes as Sets</a></li> 
+        <li><a href="visualizer.html">Interactive visualizer</a></li> 
+        <li><a href="about.html">About the visualizer</a></li> 
+    </ul>
+</nav>
+<main>
+    <h1>About this Project</h1>
+    <h3>Motivation</h3>
+    <p>This website was created as a creative project for my Math 3120 course. 
+        I selected a mathematical concept (Minkowski Sum and Difference) and produced something creative around it. 
+        In this case, I decided to manifest my creativity through a website with an interactive tool that helps develop some intuiton for Minkowski Sums and Differences.</p>
+    <h3>Design Choices - Convex hull</h3>
+    <p>
+        For this visualizer I decided to let the convex hull of a set of points represent a shape as it's more computationally effcient. 
+        An efficient algorithm is very important considering this is an interactive vizualizer. 
+        Another reason for which I decided to use the convex hull is that it allows for a bruteforce algorithm. 
+        This is particularly nice as, given my time constraints, I couldn't learn about an effcient algorithm to compute these operations. 
+    </p>
+    
+</main>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript"
+    src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+</body>
+</html>

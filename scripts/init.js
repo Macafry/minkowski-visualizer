@@ -9,7 +9,7 @@ let canvasA = document.getElementById("shapeA")
 
 let shapeA = new Shape(canvasA, "#aa8", "#d00");
 shapeA.addPoint([-.3,-.4]);
-shapeA.addPoint([0,0]);
+shapeA.addPoint([-.2,.4]);
 shapeA.addPoint([.9,.9]);
 shapeA.render();
 
